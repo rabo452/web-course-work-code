@@ -1,0 +1,50 @@
+/* MovieComponent.module.css */
+.movieCard {
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+  }
+  
+  .movieThumbnail {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+  }
+  
+  .favoriteButton {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .favoriteButton:hover {
+    background-color: #218838;
+  }
+  
+  /* Movie list container */
+  .movieList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .favoriteMovies {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  .favoriteMovie {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+  }
+  

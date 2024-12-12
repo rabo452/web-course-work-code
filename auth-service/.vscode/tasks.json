@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "docker compose build test solution",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "compose",
+                "-f",
+                "build/compose.yml",
+                "--env-file",
+                "build/.env.dev",
+                "build",
+            ],
+            "group": "build",
+        },
+        {
+            "label": "docker compose run test solution",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "compose",
+                "-f",
+                "build/compose.yml",
+                "--env-file",
+                "build/.env.dev",
+                "up",
+            ],
+            "group": "build",
+        },
+    ]
+}

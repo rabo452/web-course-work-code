@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  admin-service:
+    image: admin-service:1.0
+    build: 
+      context: .  # Build context for the app
+      dockerfile: Dockerfile.dev
+      args:
+        APP_PORT: ${APP_PORT}
+    container_name: admin-service 
+    # ports:
+    #   - "${APP_PORT}:${APP_PORT}"
+    #   - "${DEBUGGER_PORT}:${DEBUGGER_PORT}" # port for debugger 
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container for development
+    env_file:
+      - ./.env.dev
+    environment:
+      - REDIS_PORT=${REDIS_PORT}
+      - MONGODB_PORT=${MONGODB_PORT}
+      - ELASTICSEARCH_PORT=${ELASTICSEARCH_PORT}
+      - DEBUGGER_PORT=${DEBUGGER_PORT}
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true  

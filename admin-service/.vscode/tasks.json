@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "book service docker compose run",
+        "type": "shell",
+        "command": "docker",
+        "args": [
+          "compose",
+          "--file=compose.yml",
+          "--env-file",
+          ".env.dev",
+          "up"
+        ],
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "book service docker compose build",
+        "type": "shell",
+        "command": "docker",
+        "args": [
+          "compose",
+          "--file=compose.yml",
+          "--env-file",
+          ".env.dev",
+          "build"
+        ],
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+    ]
+  }
+  

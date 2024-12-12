@@ -1,0 +1,18 @@
+# Use a lightweight Python base image
+FROM python:3.10-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file from the root (docker build context is the root)
+COPY requirements.txt . 
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code
+COPY . .
+
+ARG APP_PORT
+ENV APP_PORT=$APP_PORT
+
+# Set the default command to start `uvicorn` with auto-reload enabled
+CMD uvicorn src.main:app --host 0.0.0.0 --port $APP_PORT --reload

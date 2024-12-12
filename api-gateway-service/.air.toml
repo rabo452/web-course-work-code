@@ -1,0 +1,8 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  bin = "tmp/main"
+  cmd = "go build -o ./tmp/main github.com/rabo452/api-gateway-service/cmd/gateway" # command to build the solution 
+  log = "build-errors.log"
+  poll = true # this settings allows air library to check automatically the folder structure to find the changes if it's found, it will re-compile the solution

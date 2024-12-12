@@ -1,0 +1,29 @@
+/* MovieList.module.css */
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Make movie cards responsive */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.movieCard {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movieThumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 1rem;
+}

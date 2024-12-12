@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7.0-alpine
+    container_name: redis
+    ports:
+      - "${REDIS_PORT}:6379"
+    networks:
+      - app-network
+  mongodb:
+    image: mongodb/mongodb-community-server:5.0.9-ubi8
+    container_name: mongodb
+    ports:
+      - "${MONGODB_PORT}:27017"
+    volumes:
+      - mongodb-db-volume:/data/db # the path mapping for mongodb database
+      - ./services/mongodb/init.js:/docker-entrypoint-initdb.d/init.js
+    env_file:
+      - ./config/env/mongodb/.env.mongodb.dev
+    networks:
+      - app-network
+  # elasticsearch:
+  #   image: elasticsearch:8.15.5
+  #   container_name: elasticsearch
+  #   ports:
+  #     - "${ELASTICSEARCH_PORT}:9200"
+  #   env_file:
+  #     - ./config/env/elasticsearch/.env.elasticsearch.dev
+  #   volumes:
+  #     - elasticsearch-db-volume:/usr/share/elasticsearch/data
+  #   networks:
+  #     - app-network
+  # kibana:
+  #   image: kibana:8.7.0
+  #   container_name: kibana
+  #   ports:
+  #     - "${KABANA_PORT}:5601"
+  #   networks:
+  #     - app-network
+  #   depends_on:
+  #     - elasticsearch
+
+
+volumes:
+  mongodb-db-volume:
+  elasticsearch-db-volume:
+
+networks:
+  app-network:
+    driver: "bridge"
+    external: true
+    driver_opts:
+      com.docker.network.bridge.internal: "false"

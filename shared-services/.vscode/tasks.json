@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "shared service docker compose run",
+        "type": "shell",
+        "command": "docker",
+        "args": [
+          "compose",
+          "--file=compose.yml",
+          "--env-file",
+          ".env.dev",
+          "up",
+          "-d"
+        ],
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  

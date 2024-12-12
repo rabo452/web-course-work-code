@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  api-gateway-service:
+    container_name: api-gateway-service
+    build:
+      context: ..
+      dockerfile: build/Dockerfile.dev
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    volumes:
+      - ../:/app
+    environment:
+      - APP_PORT=${APP_PORT}
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true  

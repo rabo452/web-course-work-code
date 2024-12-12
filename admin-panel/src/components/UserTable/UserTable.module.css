@@ -1,0 +1,98 @@
+/* UserTable.module.css */
+
+/* Container for the table and add user button */
+.container {
+    padding: 20px;
+  }
+  
+  /* Styling for the Add User button */
+  .addButton {
+    background-color: #28a745; /* Green color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .addButton:hover {
+    background-color: #218838;
+  }
+  
+  /* Styling for the table */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Styling for the Change button */
+  .changeButton {
+    background-color: #ffc107; /* Yellow color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .changeButton:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Styling for the Delete button */
+  .deleteButton {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c82333;
+  }
+  
+  /* Styling for the Cancel button */
+  .cancelButton {
+    background-color: #6c757d; /* Grey color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .cancelButton:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Input fields for editing */
+  input {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  

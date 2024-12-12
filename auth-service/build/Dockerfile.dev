@@ -1,0 +1,19 @@
+# Step 1: Build stage using Go's official image
+FROM golang:1.23.4-alpine
+
+WORKDIR /app
+
+# install all required go packages into the image
+RUN go install github.com/air-verse/air@latest
+RUN apk --no-cache add ca-certificates
+
+COPY go.mod go.sum ./
+RUN go mod download
+
+# define the parameter APP_PORT which is given in compilation time 
+ARG APP_PORT 
+# set the app port as environment variable
+ENV APP_PORT ${APP_PORT}
+
+# run the tool to hot reload the application once it's updated  
+CMD ["air", "-c", ".air.toml"]

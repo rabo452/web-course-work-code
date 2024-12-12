@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  auth-service:
+    container_name: auth-service
+    build:
+      context: ..
+      dockerfile: build/Dockerfile.dev
+      args:
+        - APP_PORT=${APP_PORT}
+    # ports:
+    #   - "${APP_PORT}:${APP_PORT}"
+    volumes:
+      - ../:/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true  

@@ -1,0 +1,7 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 10000,
+  "editor.wordWrap": "on", 
+  "editor.wordWrapColumn": 80,
+  "editor.snippetSuggestions": "inline"
+}

@@ -1,0 +1,56 @@
+/* Container styling */
+.container {
+    margin: 20px;
+  }
+  
+  /* Table styling */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Button styling */
+  .addButton, .changeButton, .deleteButton, .cancelButton {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .addButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  .changeButton, .deleteButton, .cancelButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  .changeButton:hover, .deleteButton:hover, .cancelButton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Hover effect for rows */
+  .table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Image styling */
+  .table img {
+    width: 100%;
+    max-width: 100px;
+    object-fit: cover;
+  }
+  
